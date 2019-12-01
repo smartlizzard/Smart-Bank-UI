@@ -1,0 +1,40 @@
+
+<h1>Saving Account Balance:Rs.{{savingsamount}}</h1>
+<br>
+
+<!-- error heree please check -->
+<div>
+  <button class="btn btn-primary" (click)="getSavingsTransactions()"> Show My Transactions</button>
+</div>
+<br>
+  <div class="container body-content" *ngIf="showMyContainer">
+  <table class="table  ">
+  <thead>
+  <tr class="d-flex">
+    <th class="col-1">Id</th>
+    <th class="col-5">Date</th>
+    <th class="col-5">Description</th>
+    <th class="col-3">Amount</th>
+    <th class="col-3">AvailableBalance</th>
+    <!-- <th>Savings Account Number</th>
+    <th>accountBalance</th> -->
+    </tr>
+  </thead>
+  <tbody>
+      <tr class="d-flex" *ngFor="let transactions of savingsTransactionList">
+          <td class="col-1">{{transactions.id}}</td>
+          <td class="col-5">{{transactions.date}}</td>
+          <td class="col-5">{{transactions.description}}</td>
+          <td class="col-3">{{transactions.amount}}</td>
+          <td class="col-3">{{transactions.availableBalance}}</td>
+          <!-- <td>{{employee.savingsAccount.accountNumber}}</td>
+          <td>{{employee.savingsAccount.accountBalance}}</td> -->
+          </tr>
+  </tbody>
+    </table>
+
+  </div>
+
+
+
+  

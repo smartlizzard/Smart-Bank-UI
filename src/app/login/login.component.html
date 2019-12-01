@@ -1,0 +1,19 @@
+
+
+  <body class="text-center">
+    <form class="form-signin">
+      <h1 class="h3 mb-3 font-weight-normal">Please Login</h1>
+      <label for="name" class="sr-only">User Name:</label>
+	  <input type="name" class="form-control" id="email" placeholder=" Enter User Name" name="username" [(ngModel)]="username" required autofocus>
+      <label for="pwd" class="sr-only">Password:</label>
+	  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password" [(ngModel)]="password" required>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+	  <button (click)=checkLogin() class="btn btn-lg btn-primary btn-block">
+       Login
+      </button>
+    </form>
+  </body>
