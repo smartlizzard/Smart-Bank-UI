@@ -9,4 +9,5 @@ RUN npm run build --prod
 FROM nginx:alpine
 ## Remove default Nginx website
 RUN rm -rf /usr/share/nginx/html/*
-COPY --from=node /app/dist/angular-app /usr/share/nginx/html
+COPY --from=node /app/dist/ /usr/share/nginx/html
+
