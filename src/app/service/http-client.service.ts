@@ -37,38 +37,39 @@ export class HttpClientService {
   }
 
   public createUser(userdata:UserData):Observable<UserData> {
-    return this.httpClient.post<UserData>("http://localhost:8090/register/",userdata)
+    return this.httpClient.post<UserData>("smart-bank://smart-bank-service:8090/register/",userdata)
     //.pipe(
     
   }
   public getSavingBalance() {
 
-    return this.httpClient.get("http://localhost:8090/account/savingAmount");
+    return this.httpClient.get("smart-bank://smart-bank-service/account/savingAmount");
 
   }
   /////check here for current account transaction use this
   public getSavingsTransactionList(): Observable<SavingTransactionList[]> {
     console.log("getSavingsTransactionList")
-    return this.httpClient.get<SavingTransactionList[]>("http://localhost:8090/account/transctionList/savings");
+    return this.httpClient.get<SavingTransactionList[]>("smart-bank://smart-bank-service:8090/account/transctionList/savings");
   }
 
   public getPrimaryTransactionList(): Observable<PrimaryTransactionList[]> {
     console.log("--HttpClientService---getPrimaryTransactionList")
-    return this.httpClient.get<PrimaryTransactionList[]>("http://localhost:8090/account/transctionList/current");
+    return this.httpClient.get<PrimaryTransactionList[]>("smart-bank://smart-bank-service:8090/account/transctionList/current");
   }
   public getAccountDetails(): Observable<Accountdetails[]>{
-    return this.httpClient.get<Accountdetails[]>("http://localhost:8090/userAccountDetails");
+    return this.httpClient.get<Accountdetails[]>("smart-bank://smart-bank-service:8090/userAccountDetails");
   }
   
   public getPresentAddress():Observable<PresentAddress>{
     console.log("00000000000000")
-return this.httpClient.get<PresentAddress>("http://localhost:8090/userInfo/getPresentAddress");
+return this.httpClient.get<PresentAddress>("smart-bank://smart-bank-service:8090/userInfo/getPresentAddress");
   }
   public getPermanentAddress():Observable<PermanentAddress>{
-    return this.httpClient.get<PermanentAddress>("http://localhost:8090/userInfo/getPermanentAddress");
+    return this.httpClient.get<PermanentAddress>("smart-bank://smart-bank-service:8090/userInfo/getPermanentAddress");
       }
 
       public getUserData():Observable<UserData>{
-        return this.httpClient.get<UserData>("http://localhost:8090/userInfo/getUserData");
+        ///http://localhost:8090/userInfo/getUserData
+        return this.httpClient.get<UserData>("smart-bank://smart-bank-service:8090/userInfo/getUserData");
       }
 }
