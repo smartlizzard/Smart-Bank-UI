@@ -43,7 +43,7 @@ export class HttpClientService {
   }
   public getSavingBalance() {
 
-    return this.httpClient.get("smart-bank://smart-bank-service/account/savingAmount");
+    return this.httpClient.get("smart-bank://smart-bank-service:8090/account/savingAmount");
 
   }
   /////check here for current account transaction use this
