@@ -31,7 +31,7 @@ export class AuthService {
   ///////////uncomment this code while trying to connecto server///////////////
   authenticate(username, password) {
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
-    return this.httpClient.get<Auth>('http://smart-bank-ui-service:8090/validatelogin',{headers}).pipe(
+    return this.httpClient.get<Auth>('http://smart-bank-service:8090/validatelogin',{headers}).pipe(
      map(
        userData => {
         sessionStorage.setItem('username',username);
