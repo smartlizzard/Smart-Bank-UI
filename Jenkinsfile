@@ -12,7 +12,7 @@ pipeline {
       }
     }
     stage('Cloning Git') {
-      steps{
+      steps {
         git branch: 'k8s-dev',
         url: 'https://github.com/smartlizzard/Smart-Bank-UI.git'
       }
