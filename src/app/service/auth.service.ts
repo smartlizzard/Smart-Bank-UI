@@ -32,7 +32,9 @@ export class AuthService {
   authenticate(username, password) {
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
    // return this.httpClient.get<Auth>('http://18.206.221.114:30008/validatelogin',{headers}).pipe(
-      return this.httpClient.get<Auth>('smart-bank-clusterip:8090/validatelogin',{headers}).pipe(
+    return this.httpClient.get<Auth>('http://localhost:8765/api/bank/validatelogin',{headers}).pipe(
+    
+      //return this.httpClient.get<Auth>('smart-bank-clusterip:8090/validatelogin',{headers}).pipe(
       
      map(
        userData => {
