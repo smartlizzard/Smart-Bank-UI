@@ -2,7 +2,7 @@ pipeline {
   agent any
   environment {
     registry = "smartlizzard/smartbank-ui"
-    registryCredential = 'dockerhub'
+    registryCredential = 'DockerHub'
     dockerImage = ''
   }
   stages {

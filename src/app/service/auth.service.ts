@@ -32,10 +32,11 @@ export class AuthService {
   authenticate(username, password) {
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
    // return this.httpClient.get<Auth>('http://18.206.221.114:30008/validatelogin',{headers}).pipe(
-    return this.httpClient.get<Auth>('http://localhost:8765/api/bank/validatelogin',{headers}).pipe(
-    
-      //return this.httpClient.get<Auth>('smart-bank-clusterip:8090/validatelogin',{headers}).pipe(
-      
+     //for zull
+   // return this.httpClient.get<Auth>('http://localhost:8765/api/bank/validatelogin',{headers}).pipe(
+     ///for service smart-bank-service
+    return this.httpClient.get<Auth>('http://smart-bank-service.smartbank.svc.cluster.local:8765/api/bank/validatelogin',{headers}).pipe(
+    ///http://login.<namespace>.svc.cluster.local:5555/login
      map(
        userData => {
         sessionStorage.setItem('username',username);
