@@ -37,7 +37,11 @@ export class HttpClientService {
   }
 
   public createUser(userdata:UserData):Observable<UserData> {
-    return this.httpClient.post<UserData>("http://localhost:8765/api/bank/register/",userdata)
+    ///for juul
+    //return this.httpClient.post<UserData>("http://localhost:8765/api/bank/register/",userdata)
+    //for k8s
+    return this.httpClient.post<UserData>("http://35.197.150.55/smartbank/register/",userdata)
+  
     //.pipe(
     
   }
