@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    registry = "https://insightacr768.azurecr.io"
+    registry = "insightacr768.azurecr.io"
     registryCredential = 'azureDockerRepo'
     dockerImage = ''
   }
