@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    registry = "insightacr768.azurecr.io"
+    registry = "insightacr768.azurecr.io/smart"
     registryCredential = 'azureDockerRepo'
     dockerImage = ''
   }
