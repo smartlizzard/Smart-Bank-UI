@@ -8,6 +8,6 @@ RUN npm run build --prod
 # stage 2
 FROM nginx:alpine
 ## Remove default Nginx website
-RUN rm -rf /usr/share/nginx/html/*
+#RUN rm -rf /usr/share/nginx/html/*
 COPY --from=node /app/dist/SmartBank-Client /usr/share/nginx/html
 
